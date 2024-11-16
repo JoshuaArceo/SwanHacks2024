@@ -28,7 +28,9 @@
                            required minlength="6" maxlength="10"/>
                 </div>
             </div>
-
+            <div th:if="${param.error != null}" class="form-group row">
+                <span th:text="${param.error}"></span>
+            </div>
             <div>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </div>
