@@ -14,28 +14,30 @@ public class User {
         TEACHER
     }
 
-    @JsonIgnore
-    private byte[] passwordHash;
-    @JsonIgnore
-    private byte[] salt;
+    private String password;
+
+//    @JsonIgnore
+//    private byte[] passwordHash;
+
+
+//    @JsonIgnore
+//    private byte[] salt;
 
     private UserType userType;
 
     public User() {
     }
 
-    /
     public User(String username){
         this.name = username;
-        this.passwordHash = null;
-        this.salt = null;
+        this.password = null;
         this.userType = UserType.STUDENT;
     }
 
-    public User(String username, byte[] passwordHash, byte[] salt){
+    public User(String username, String password /*, byte[] salt*/){
         this.name = username;
-        this.passwordHash = passwordHash;
-        this.salt = salt;
+        this.password = password;
+//        this.salt = salt;
         this.userType = UserType.TEACHER;
     }
 

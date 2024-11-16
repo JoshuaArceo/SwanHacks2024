@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<Teacher, String> {
+public interface UserRepository extends JpaRepository<User, String> {
 
-        Teacher findByName(java.lang.String name);
+        User findByName(java.lang.String name);
 
         @Transactional
         void deleteByName(String name);
