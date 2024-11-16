@@ -25,11 +25,11 @@ public class WebController {
         return "register";
     }
 
-    @GetMapping("/logIn")
+    @GetMapping("/login")
     public String showLogInForm(Model model) {
         model.addAttribute("user", new User());
 
-        return "logIn";
+        return "login";
     }
 
     @PostMapping("/registerNew")
