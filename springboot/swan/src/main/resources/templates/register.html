@@ -7,7 +7,6 @@
   <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container text-center">
   <div>
     <h1>User Registration - Sign Up</h1>
   </div>
@@ -41,6 +40,9 @@
           <input type="text" th:field="${user.lastName}" class="form-control"
                  required minlength="2" maxlength="20" />
         </div>
+      </div>
+      <div th:if="${param.error != null}" class="form-group row">
+        <span >Username is taken</span>
       </div>
 
       <div>
