@@ -24,6 +24,14 @@ public class WebController {
 
         return "register";
     }
+
+    @GetMapping("/logIn")
+    public String showLogInForm(Model model) {
+        model.addAttribute("user", new User());
+
+        return "logIn";
+    }
+
     @PostMapping("/registerNew")
     public String register(User user) {
         if(userRepo.findByUsername(user.getUsername()) != null) {
