@@ -1,0 +1,59 @@
+<div class="container text-center">
+  <h1>User Stats for <span th:text="${userToInspect}"></span></h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th><a href="#" onclick="sortTable(0)">Attempt</a></th>
+      <th><a href="#" onclick="sortTable(1)">Activity Type</a></th>
+      <th><a href="#" onclick="sortTable(2)">Grade</a></th>
+      <th><a href="#" onclick="sortTable(3)">Percent Error</a></th>
+      <th>Mercury</th>
+      <th>Venus</th>
+      <th>Earth</th>
+      <th>Mars</th>
+      <th>Jupiter</th>
+      <th>Saturn</th>
+      <th>Uranus</th>
+      <th>Neptune</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="stat : ${userStats}">
+      <td th:text="${stat.attempt}"></td>
+      <td th:text="${stat.activityType}"></td>
+      <td th:text="${stat.grade}"></td>
+      <td th:text="${stat.planetValues[0].vector}"></td>
+      <td th:text="${stat.planetValues[0].percentError}"></td>
+      <td th:text="${stat.planetValues[1].vector}"></td>
+      <td th:text="${stat.planetValues[1].percentError}"></td>
+      <td th:text="${stat.planetValues[2].vector}"></td>
+      <td th:text="${stat.planetValues[2].percentError}"></td>
+      <td th:text="${stat.planetValues[3].vector}"></td>
+      <td th:text="${stat.planetValues[3].percentError}"></td>
+      <td th:text="${stat.planetValues[4].vector}"></td>
+      <td th:text="${stat.planetValues[4].percentError}"></td>
+      <td th:text="${stat.planetValues[5].vector}"></td>
+      <td th:text="${stat.planetValues[5].percentError}"></td>
+      <td th:text="${stat.planetValues[6].vector}"></td>
+      <td th:text="${stat.planetValues[6].percentError}"></td>
+      <td th:text="${stat.planetValues[7].vector}"></td>
+      <td th:text="${stat.planetValues[7].percentError}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function sortTable(columnIndex) {
+    const table = document.querySelector("table tbody");
+    const rows = Array.from(table.rows);
+
+    rows.sort((a, b) => {
+      const cellA = a.cells[columnIndex].textContent.trim();
+      const cellB = b.cells[columnIndex].textContent.trim();
+      return cellA.localeCompare(cellB, undefined, { numeric: true });
+    });
+
+    rows.forEach(row => table.appendChild(row));
+  }
+</script>

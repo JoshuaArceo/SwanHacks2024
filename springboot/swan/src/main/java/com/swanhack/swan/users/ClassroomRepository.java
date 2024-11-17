@@ -15,4 +15,6 @@ public interface ClassroomRepository extends JpaRepository<Classroom, Long> {
     void deleteById(int id);
 
     List<Classroom> findByMembersContaining(User user);
+
+
 }

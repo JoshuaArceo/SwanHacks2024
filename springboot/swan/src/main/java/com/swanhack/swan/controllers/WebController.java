@@ -1,5 +1,7 @@
 package com.swanhack.swan.controllers;
 
+import com.swanhack.swan.unitydata.Unitydata;
+import com.swanhack.swan.unitydata.UnitydataRepository;
 import com.swanhack.swan.users.Classroom;
 import com.swanhack.swan.users.ClassroomRepository;
 import com.swanhack.swan.users.User;
@@ -20,6 +22,10 @@ public class WebController {
 
     @Autowired
     private ClassroomRepository classroomRepository;
+
+    @Autowired
+    private UnitydataRepository unitydataRepository;
+
     @GetMapping("")
     public String viewHomePage() {
         return "index";
@@ -109,6 +115,16 @@ public class WebController {
 
         return "redirect:/manageclasses?username=" + username;
     }
+
+    @GetMapping("/userstats")
+    public String userStats(String username, String userstat, Model model) {
+        List<Unitydata> userStats = unitydataRepository.findAllByUser(userRepo.findByUsername(username));
+        model.addAttribute("userStats", userStats);
+        model.addAttribute("username", username);
+        model.addAttribute("userToInspect", userstat);
+        return "userstats";
+    }
+
 
 
 //    @PostMapping("/classrooms")
