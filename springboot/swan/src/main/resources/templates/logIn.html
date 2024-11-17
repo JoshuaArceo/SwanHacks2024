@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div>
-        <h1>Log In</h1>
+        <h1>Welcome Back</h1>
     </div>
     <form th:action="@{/loginCheck}"
           method="post" style="max-width: 600px; margin: 0 auto;">
@@ -34,6 +34,9 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Log In</button>
+            </div>
+            <div class="swap">
+                <a href="register"> Create an account </a>
             </div>
         </div>
     </form>
