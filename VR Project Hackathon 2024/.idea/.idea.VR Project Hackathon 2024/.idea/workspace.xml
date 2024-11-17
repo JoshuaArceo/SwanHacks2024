@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="512aa323-5f37-4ea9-9d9a-2d375e9d3007" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CompareDistance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CompareDistance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CompareScale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CompareScale.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Activity2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Activity2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct2.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
