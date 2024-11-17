@@ -1,0 +1,42 @@
+package com.swanhack.swan.planet;
+
+
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.swanhack.swan.users.User;
+import jakarta.persistence.*;
+import org.springframework.stereotype.Controller;
+
+import java.util.ArrayList;
+
+@Entity
+@Table(name = "PlanetStats")
+public class Stats {
+
+    private static final String[] planets = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+    @Id
+    private int id;
+
+    @OneToOne
+    @JsonIgnore
+    private User user;
+
+    @Column(name = "attempt", nullable = false)
+    private int attempt;
+
+    @Column(name = "score", nullable = false)
+    private int score;
+
+    //array of planet positions
+    @Column(name = "positions", nullable = false)
+    private int[] positions;
+
+
+
+
+
+
+
+
+
+}

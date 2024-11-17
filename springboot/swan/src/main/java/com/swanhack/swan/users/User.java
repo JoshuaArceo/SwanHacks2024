@@ -3,7 +3,13 @@ package com.swanhack.swan.users;
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import jakarta.persistence.*;
-import org.springframework.stereotype.Controller;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -37,22 +43,26 @@ public class User {
     @Column(name = "user_type", nullable = false)
     private UserType userType;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "members")
+    private List<Classroom> classroom;
     public User() {
     }
 
     public User(String username){
+        this.classroom = new ArrayList<>();
         this.username = username;
         this.password = null;
         this.userType = UserType.STUDENT;
     }
 
     public User(String username, String password /*, byte[] salt*/){
+        this.classroom = new ArrayList<>();
         this.username = username;
         this.password = password;
 //        this.salt = salt;
         this.userType = UserType.TEACHER;
     }
-
 
 
     public String getUsername() {
