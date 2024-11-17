@@ -193,3 +193,19 @@ button.btn-primary:hover {
     background: #0056b3;
     transform: scale(1.05);
 }
+
+.student-list a, .student-list a:visited {
+    color: #fff !important; /* Forces the link color to stay white */
+    text-decoration: none;
+}
+
+.student-list a:hover {
+    color: #80d8ff !important;
+    text-decoration: underline;
+}
+
+.individual-student:visited{
+    color: #fff !important; /* Forces the link color to stay white */
+    text-decoration: none;
+
+}

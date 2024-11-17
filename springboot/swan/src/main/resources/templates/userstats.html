@@ -9,7 +9,6 @@
     <tr>
       <th><a href="#" onclick="sortTable(0)">Activity Type</a></th>
       <th><a href="#" onclick="sortTable(1)">Grade</a></th>
-      <th><a href="#" onclick="sortTable(2)">Percent Error</a></th>
       <th>Mercury</th>
       <th>Venus</th>
       <th>Earth</th>
@@ -24,7 +23,6 @@
     <tr th:each="stat : ${userStats}">
       <td th:text="${stat.activityType}"></td>
       <td th:text="${stat.grade}"></td>
-      <td>Vector, % Error</td>
       <td>
         <span th:text="'(' + ${stat.planetValues[0].vector} + '), ' + ${stat.planetValues[0].percentError} + '%'"></span>
       </td>
