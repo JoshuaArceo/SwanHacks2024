@@ -1,12 +1,11 @@
 <div class="container text-center">
-  <h1>User Stats for <span th:text="${userToInspect}"></span></h1>
+  <h1>User Stats for <span th:text="${param.username}"></span></h1>
   <table class="table table-striped">
     <thead>
     <tr>
-      <th><a href="#" onclick="sortTable(0)">Attempt</a></th>
-      <th><a href="#" onclick="sortTable(1)">Activity Type</a></th>
-      <th><a href="#" onclick="sortTable(2)">Grade</a></th>
-      <th><a href="#" onclick="sortTable(3)">Percent Error</a></th>
+      <th><a href="#" onclick="sortTable(0)">Activity Type</a></th>
+      <th><a href="#" onclick="sortTable(1)">Grade</a></th>
+      <th><a href="#" onclick="sortTable(2)">Percent Error</a></th>
       <th>Mercury</th>
       <th>Venus</th>
       <th>Earth</th>
@@ -19,7 +18,6 @@
     </thead>
     <tbody>
     <tr th:each="stat : ${userStats}">
-      <td th:text="${stat.attempt}"></td>
       <td th:text="${stat.activityType}"></td>
       <td th:text="${stat.grade}"></td>
       <td th:text="${stat.planetValues[0].vector}"></td>

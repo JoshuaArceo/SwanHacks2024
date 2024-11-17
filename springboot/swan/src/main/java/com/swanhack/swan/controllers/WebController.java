@@ -76,11 +76,25 @@ public class WebController {
         model.addAttribute("classes", classroomRepository.findByMembersContaining(userRepo.findByUsername(username)));
         return "manageclasses";
     }
+
+    @PostMapping("/createUser")
+    public User createUser(String username) {
+        User user = new User();
+        user.setUsername(username);
+        userRepo.save(user);
+        return user;
+    }
+
     @PostMapping("/addUser")
     public String addUserToClassroom(String userToAdd, int classId, String username) {
         User user = userRepo.findByUsername(userToAdd);
         Classroom classroom = classroomRepository.findById(classId);
-        if (user != null && classroom != null) {
+        if (classroom != null) {
+            if(user == null) {
+                user = createUser(
+                        userToAdd
+                );
+            }
             classroom.addMember(user);
             classroomRepository.save(classroom);
         }
@@ -116,7 +130,7 @@ public class WebController {
         return "redirect:/manageclasses?username=" + username;
     }
 
-    @GetMapping("/userstats")
+    @GetMapping("/viewuserstats")
     public String userStats(String username, String userstat, Model model) {
         List<Unitydata> userStats = unitydataRepository.findAllByUser(userRepo.findByUsername(username));
         model.addAttribute("userStats", userStats);

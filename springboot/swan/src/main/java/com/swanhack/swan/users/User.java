@@ -52,6 +52,12 @@ public class User {
     private List<Unitydata> unitydata;
 
     public User() {
+        this.classroom = new ArrayList<>();
+        this.unitydata = new ArrayList<>();
+        this.userType = UserType.STUDENT;
+        this.password = "null";
+        this.firstName = "null";
+        this.lastName = "null";
     }
 
     public User(String username){
