@@ -6,10 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="512aa323-5f37-4ea9-9d9a-2d375e9d3007" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Screen.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Screen.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Earth.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Earth.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Sun.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Sun.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Earth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Earth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Jupiter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Jupiter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mars.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mars.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mercury.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mercury.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Neptune.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Neptune.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Saturn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Saturn.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Uranus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Uranus.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Venus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Venus.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CompareScale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CompareScale.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneChange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +34,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDTransfer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StaticData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
@@ -99,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731794292262</updated>
       <workItem from="1731794297307" duration="237000" />
-      <workItem from="1731797331809" duration="2296000" />
+      <workItem from="1731797331809" duration="8481000" />
     </task>
     <servers />
   </component>

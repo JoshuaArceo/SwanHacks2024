@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CompareScale : MonoBehaviour
 {
-    private float[] planetsActual = {0.0034f,0.0086f,0.0091f, 0.0048f, 0.1f, 0.084f, 0.034f, 0.033f};
+    private float[] planetsActual = {0.035f,0.087f,0.092f, 0.049f, 1.028f, 0.867f, 0.367f, 0.356f};
     public Transform[] planetsEstimated;
     public Transform[] textLoc;
     private List<Vector3> initialPositions = new List<Vector3>();

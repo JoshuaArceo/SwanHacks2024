@@ -15,6 +15,8 @@ public class SceneChange : MonoBehaviour
     
     public void LoadActivity2()
     {
+        string id = manager.getID();
+        StaticData.valueToKeep = id;
         SceneManager.LoadScene("Activity2");
     }
 }
