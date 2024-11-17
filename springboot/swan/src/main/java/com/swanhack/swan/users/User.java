@@ -2,8 +2,15 @@ package com.swanhack.swan.users;
 
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+import com.swanhack.swan.unitydata.Unitydata;
 import jakarta.persistence.*;
-import org.springframework.stereotype.Controller;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -37,22 +44,36 @@ public class User {
     @Column(name = "user_type", nullable = false)
     private UserType userType;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "members")
+    private List<Classroom> classroom;
+
+    @OneToMany(mappedBy = "user")
+    private List<Unitydata> unitydata;
+
     public User() {
+        this.classroom = new ArrayList<>();
+        this.unitydata = new ArrayList<>();
+        this.userType = UserType.STUDENT;
+        this.password = "null";
+        this.firstName = "null";
+        this.lastName = "null";
     }
 
     public User(String username){
+        this.classroom = new ArrayList<>();
         this.username = username;
         this.password = null;
         this.userType = UserType.STUDENT;
     }
 
     public User(String username, String password /*, byte[] salt*/){
+        this.classroom = new ArrayList<>();
         this.username = username;
         this.password = password;
 //        this.salt = salt;
         this.userType = UserType.TEACHER;
     }
-
 
 
     public String getUsername() {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Classroom Students</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+  <div>
+    <h1>Classroom Students</h1>
+  </div>
+
+  <div>
+<!--    <form th:action="@{/createClass}" method="post">-->
+<!--      <input type="hidden" name="username" th:value="${param.username}" />-->
+<!--      <button type="submit">Create a Class</button>-->
+<!--    </form>-->
+    <form th:action="@{/manageclasses}">
+      <input type="hidden" name="username" th:value="${param.username}" />
+      <button type="submit">Manage Classes</button>
+    </form>
+  </div>
+</div>
+
+<script>
+
+
+</script>
+
+
+</body>
+
+</html>

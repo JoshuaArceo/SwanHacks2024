@@ -2,39 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="/css/register.css" />
   <title>Sign Up - CodeJava</title>
   <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
   <div>
-    <h1>User Registration - Sign Up</h1>
+    <h1>Create an Account</h1>
   </div>
   <form th:action="@{/registerNew}"
         method="post" style="max-width: 600px; margin: 0 auto;">
-    <div class="m-3">
-      <div class="form-group row">
+    <div class="form-container">
+      <div class="form-group-row">
         <label class="col-4 col-form-label">Username: </label>
         <div class="col-8">
           <input type="text" th:field="${user.username}" class="form-control"
                  required minlength="4" maxlength="10"/>
         </div>
       </div>
-      <div class="form-group row">
+      <div class="form-group-row">
         <label class="col-4 col-form-label">Password: </label>
         <div class="col-8">
           <input type="password" th:field="${user.password}" class="form-control"
                  required minlength="8" maxlength="26"/>
         </div>
       </div>
-      <div class="form-group row">
+      <div class="form-group-row">
         <label class="col-4 col-form-label">First Name: </label>
         <div class="col-8">
           <input type="text" th:field="${user.firstName}" class="form-control"
                  required minlength="2" maxlength="20"/>
         </div>
       </div>
-      <div class="form-group row">
+      <div class="form-group-row">
         <label class="col-4 col-form-label">Last Name: </label>
         <div class="col-8">
           <input type="text" th:field="${user.lastName}" class="form-control"
@@ -45,7 +47,12 @@
         <span th:text="${param.error}"></span>
       </div>
       <div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <div class="swap">
+        <a href="login">
+          Have an account?
+        </a>
       </div>
     </div>
   </form>
