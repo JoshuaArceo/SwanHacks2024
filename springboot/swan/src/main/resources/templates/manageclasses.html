@@ -41,7 +41,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="student : ${class.members}">
-                    <td >
+                    <td class="individual-student">
                         <a th:href="@{/viewuserstats(username=${student.username})}" th:text="${student.username}"></a>
                     </td>
                     <td>

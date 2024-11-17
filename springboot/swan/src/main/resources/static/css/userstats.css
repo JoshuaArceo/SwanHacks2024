@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/space.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* General container styling */
+.container {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 90%;
+    font-family: Arial, sans-serif;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+}
+
+/* Center-align text for the heading */
+.container h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.table th, .table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+.table thead th {
+    background: rgb(30, 30, 30);
+    color: white;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background: rgb(176, 176, 176);
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background: rgb(224, 224, 224);
+}
+
+
+
+
+/* Links inside table headers */
+.table th a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.table th a:hover {
+    color: #000;
+}
+
+/* Make cells responsive for overflow text */
+.table td {
+    word-wrap: break-word;
+    max-width: 100px; /* Adjust as needed */
+}

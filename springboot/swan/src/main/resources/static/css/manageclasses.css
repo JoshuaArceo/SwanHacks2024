@@ -79,6 +79,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .student-list th,
@@ -86,12 +87,19 @@ body {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
 }
-
+.student-list individual-student {
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+}
 .student-list th {
     font-weight: bold;
-    background: rgba(62, 62, 255, 0.8);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    text-decoration: none;
 }
 
 .student-list tr:hover {
@@ -184,4 +192,20 @@ button.btn-primary {
 button.btn-primary:hover {
     background: #0056b3;
     transform: scale(1.05);
+}
+
+.student-list a, .student-list a:visited {
+    color: #fff !important; /* Forces the link color to stay white */
+    text-decoration: none;
+}
+
+.student-list a:hover {
+    color: #80d8ff !important;
+    text-decoration: underline;
+}
+
+.individual-student:visited{
+    color: #fff !important; /* Forces the link color to stay white */
+    text-decoration: none;
+
 }

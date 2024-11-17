@@ -67,7 +67,7 @@ public class UnityController {
 			JSONParser parse = new JSONParser(requestBody);
 
 			LinkedHashMap<Object, Object> dataJSON = (LinkedHashMap<Object, Object>) parse.parse();
-
+			System.out.println(dataJSON.toString());
 			// Extract username and validate
 			String username = (String) dataJSON.get("username");
 			if (username == null) {

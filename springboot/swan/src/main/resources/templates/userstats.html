@@ -1,11 +1,14 @@
-<div class="container text-center">
+<head>
+  <meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="/css/userstats.css" />
+</head>
+  <div class="container text-center">
   <h1>User Stats for <span th:text="${param.username}"></span></h1>
   <table class="table table-striped">
     <thead>
     <tr>
       <th><a href="#" onclick="sortTable(0)">Activity Type</a></th>
       <th><a href="#" onclick="sortTable(1)">Grade</a></th>
-      <th><a href="#" onclick="sortTable(2)">Percent Error</a></th>
       <th>Mercury</th>
       <th>Venus</th>
       <th>Earth</th>
@@ -20,22 +23,30 @@
     <tr th:each="stat : ${userStats}">
       <td th:text="${stat.activityType}"></td>
       <td th:text="${stat.grade}"></td>
-      <td th:text="${stat.planetValues[0].vector}"></td>
-      <td th:text="${stat.planetValues[0].percentError}"></td>
-      <td th:text="${stat.planetValues[1].vector}"></td>
-      <td th:text="${stat.planetValues[1].percentError}"></td>
-      <td th:text="${stat.planetValues[2].vector}"></td>
-      <td th:text="${stat.planetValues[2].percentError}"></td>
-      <td th:text="${stat.planetValues[3].vector}"></td>
-      <td th:text="${stat.planetValues[3].percentError}"></td>
-      <td th:text="${stat.planetValues[4].vector}"></td>
-      <td th:text="${stat.planetValues[4].percentError}"></td>
-      <td th:text="${stat.planetValues[5].vector}"></td>
-      <td th:text="${stat.planetValues[5].percentError}"></td>
-      <td th:text="${stat.planetValues[6].vector}"></td>
-      <td th:text="${stat.planetValues[6].percentError}"></td>
-      <td th:text="${stat.planetValues[7].vector}"></td>
-      <td th:text="${stat.planetValues[7].percentError}"></td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[0].vector} + '), ' + ${stat.planetValues[0].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[1].vector} + '), ' + ${stat.planetValues[1].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[2].vector} + '), ' + ${stat.planetValues[2].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[3].vector} + '), ' + ${stat.planetValues[3].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[4].vector} + '), ' + ${stat.planetValues[4].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[5].vector} + '), ' + ${stat.planetValues[5].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[6].vector} + '), ' + ${stat.planetValues[6].percentError} + '%'"></span>
+      </td>
+      <td>
+        <span th:text="'(' + ${stat.planetValues[7].vector} + '), ' + ${stat.planetValues[7].percentError} + '%'"></span>
+      </td>
     </tr>
     </tbody>
   </table>
