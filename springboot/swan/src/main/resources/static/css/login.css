@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    max-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
