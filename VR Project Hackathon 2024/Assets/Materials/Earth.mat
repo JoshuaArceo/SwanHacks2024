@@ -78,7 +78,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AtmosFalloff: 12
+    - _AtmosFalloff: 5.1
     - _BumpScale: 1
     - _CloudIntensityMin: 0.01
     - _Cutoff: 0.5
@@ -96,9 +96,9 @@ Material:
     - _NormalMapIntensity: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimIntensity: 0
-    - _RimPower: 64
-    - _Smoothness: 0.4
+    - _RimIntensity: 10
+    - _RimPower: 12
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularIntensity: 2

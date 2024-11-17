@@ -15,6 +15,14 @@ public class SceneChange : MonoBehaviour
     
     public void LoadActivity2()
     {
+        string id = manager.getID();
+        StaticData.valueToKeep = id;
+        Debug.Log(id); //null
         SceneManager.LoadScene("Activity2");
+    }
+    
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
