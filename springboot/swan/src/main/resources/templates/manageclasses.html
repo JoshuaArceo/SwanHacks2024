@@ -2,24 +2,82 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Classroom Students</title>
+    <title>Classroom Management</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function showStudents(classId) {
+            const studentLists = document.querySelectorAll(".student-list");
+            studentLists.forEach(list => list.style.display = "none");
+            document.getElementById("students-" + classId).style.display = "block";
+        }
+    </script>
 </head>
 <body>
 <div class="container text-center">
-    <div>
-        <h1>Classroom Management</h1>
+    <h1>Classroom Management</h1>
+</div>
+
+<div>
+    <!-- Dropdown to select classroom -->
+    <select onchange="showStudents(this.value)">
+        <option value="" selected disabled>Select Classroom</option>
+        <option th:each="class : ${classes}" th:value="${class.id}" th:text="${class.name}"></option>
+    </select>
+
+    <!-- Student list for each classroom -->
+    <div th:each="class : ${classes}" th:id="'students-' + ${class.id}" style="display: none;" class="student-list">
+        <h3 th:text="${class.name}"></h3>
+        <form th:action="@{/deleteUser}" method="post">
+            <input type="hidden" name="username" th:value="${param.username}" />
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="student : ${class.members}">
+                    <td >
+                        <a th:href="@{/viewuserstats(username=${student.username})}" th:text="${student.username}"></a>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="usernameToDelete" th:value="${student.username}" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="hidden" name="classId" th:value="${class.id}" />
+            <button type="submit" class="btn btn-danger">Remove Selected Users</button>
+        </form>
     </div>
 </div>
 
-<script>
+<!-- Form to add user -->
+<form th:action="@{/addUser}" method="post">
+    <input type="text" name="userToAdd" placeholder="Enter username to add" />
+    <input type="hidden" name="username" th:value="${param.username}" />
+    <select name="classId">
+        <option th:each="class : ${classes}" th:value="${class.id}" th:text="${class.name}"></option>
+    </select>
+    <button type="submit" class="btn btn-success">Add User</button>
+</form>
 
-
-</script>
-
-
+<!-- Buttons to create/delete classrooms -->
+<form th:action="@{/createClass}" method="post">
+    <input type="text" name="classname" placeholder="New Classroom Name" th:value="${param.classname}" />
+    <input type="hidden" name="username" th:value="${param.username}" />
+    <button type="submit" class="btn btn-primary">Create Classroom</button>
+</form>
+<form th:action="@{/deleteClassroom}" method="post">
+    <input type="hidden" name="username" th:value="${param.username}" />
+    <select name="classId">
+        <option value="" selected disabled>Select Classroom</option>
+        <option th:each="class : ${classes}" th:value="${class.id}" th:text="${class.name}"></option>
+    </select>
+    <button type="submit" class="btn btn-danger">Delete Classroom</button>
+</form>
 </body>
-
 </html>

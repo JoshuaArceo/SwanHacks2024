@@ -70,15 +70,46 @@ public class WebController {
         model.addAttribute("classes", classroomRepository.findByMembersContaining(userRepo.findByUsername(username)));
         return "manageclasses";
     }
+    @PostMapping("/addUser")
+    public String addUserToClassroom(String userToAdd, int classId, String username) {
+        User user = userRepo.findByUsername(userToAdd);
+        Classroom classroom = classroomRepository.findById(classId);
+        if (user != null && classroom != null) {
+            classroom.addMember(user);
+            classroomRepository.save(classroom);
+        }
+        return "redirect:/manageclasses?username=" + username;
+    }
 
     @PostMapping("/createClass")
-    public String createClassroom(String username) {
+    public String createClassroom(String classname, String username) {
         User user = userRepo.findByUsername(username);
         Classroom classroom = new Classroom();
         classroom.addMember(user);
+        classroom.setName(classname);
         classroomRepository.save(classroom);
-        return "redirect:teacher?username=" + username;
+        return "redirect:manageclasses?username=" + username;
     }
+
+    @PostMapping("/deleteClassroom")
+    public String deleteClassroom(int classId, String username) {
+        classroomRepository.deleteById(classId);
+        return "redirect:/manageclasses?username=" + username;
+    }
+
+    @PostMapping("/deleteUser")
+    public String deleteUserFromClassroom(String usernameToDelete, int classId, String username) {
+        User userToDelete = userRepo.findByUsername(usernameToDelete);
+        Classroom classroom = classroomRepository.findById(classId);
+
+        if (userToDelete != null && classroom != null) {
+            classroom.removeMember(userToDelete);
+            classroomRepository.save(classroom);
+        }
+
+        return "redirect:/manageclasses?username=" + username;
+    }
+
 
 //    @PostMapping("/classrooms")
 //    public String updateSelectedClassroom(int classroomId, Model model) {

@@ -16,6 +16,8 @@ public class Classroom {
     @Id
     private int id;
 
+    private String name;
+
     @ManyToMany()
 //    @JoinColumn(name = "classroom")
     private List<User> members;
@@ -29,13 +31,35 @@ public class Classroom {
         this.members.add(user);
     }
 
+    public void removeMember(User user) {
+        this.members.remove(user);
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Classroom() {
+        this.name = "Classroom " + nextID;
         this.members = new ArrayList<>();
         this.id = nextID++;
     }
     public Classroom(User user) {
+        this.name = "Classroom " + nextID;
         this.members = new ArrayList<>();
         this.id = nextID++;
         addMember(user);
+    }
+
+    public Classroom(String name) {
+        this.name = name;
+        this.members = new ArrayList<>();
+        this.id = nextID++;
     }
 }
