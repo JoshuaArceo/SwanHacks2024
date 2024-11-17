@@ -19,4 +19,9 @@ public class SceneChange : MonoBehaviour
         StaticData.valueToKeep = id;
         SceneManager.LoadScene("Activity2");
     }
+    
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
 }
