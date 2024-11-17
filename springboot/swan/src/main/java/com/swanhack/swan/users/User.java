@@ -2,6 +2,7 @@ package com.swanhack.swan.users;
 
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+import com.swanhack.swan.planet.Unitydata;
 import jakarta.persistence.*;
 
 import jakarta.persistence.CascadeType;
@@ -46,6 +47,10 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "members")
     private List<Classroom> classroom;
+
+    @OneToMany
+    private List<Unitydata> unitydata;
+
     public User() {
     }
 

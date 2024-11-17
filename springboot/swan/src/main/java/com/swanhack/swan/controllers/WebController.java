@@ -46,7 +46,7 @@ public class WebController {
         }
         user.setUserType(User.UserType.TEACHER);
         userRepo.save(user);
-        return "redirect:teacher?username=" + user.getUsername();
+        return "redirect:manageclasses?username=" + user.getUsername();
     }
 
     @PostMapping("/loginCheck")
@@ -55,7 +55,7 @@ public class WebController {
         if(user == null || !user.getPassword().equals(password)){
             return "redirect:login?error=Invalid+username+or+password";
         }
-        return "redirect:teacher?username=" + username;
+        return "redirect:manageclasses?username=" + username;
     }
 
     @GetMapping("/teacher")
