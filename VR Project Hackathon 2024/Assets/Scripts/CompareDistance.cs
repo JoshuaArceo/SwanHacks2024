@@ -11,14 +11,17 @@ public class CompareDistance : MonoBehaviour
     public Transform[] textLoc;
     private List<Vector3> actualPositions = new List<Vector3>();
     public GameObject textField;
+    private List<float> errors = new List<float>();
+    private List<Vector3> estimatedPositions = new List<Vector3>();
     public void calculateError()
     {
         for (int i = 0; i < planetsEstimated.Length; i++)
         {
             actualPositions.Add(planetsEstimated[i].transform.position.normalized*planetsActual[i]);
-            
+            estimatedPositions.Add(planetsEstimated[i].transform.position);
             planetsEstimated[i].transform.rotation = Quaternion.Euler(0,0,0);
             float error = (planetsEstimated[i].transform.position.magnitude - actualPositions[i].magnitude) / actualPositions[i].magnitude * 100f;
+            errors.Add(error);
             var planet = Instantiate(planetsEstimated[i], textLoc[i], false);
             planet.transform.position = actualPositions[i];
             var txt = Instantiate(textField, planet.transform, false);
@@ -35,5 +38,15 @@ public class CompareDistance : MonoBehaviour
             //Debug.Log(-1*error + "% too low");
             }
         }
+    }
+
+    public List<float> GetErrors()
+    {
+        return errors;
+    }
+
+    public List<Vector3> GetEstimatePositions()
+    {
+        return estimatedPositions;
     }
 }

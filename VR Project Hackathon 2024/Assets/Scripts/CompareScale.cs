@@ -11,6 +11,8 @@ public class CompareScale : MonoBehaviour
     public Transform[] textLoc;
     private List<Vector3> initialPositions = new List<Vector3>();
     public GameObject textField;
+    private List<float> errors = new List<float>();
+    private List<Vector3> estimatedScales = new List<Vector3>();
 
     private void Start()
     {
@@ -25,8 +27,10 @@ public class CompareScale : MonoBehaviour
         for (int i = 0; i < planetsEstimated.Length; i++)
         {
             planetsEstimated[i].position = initialPositions[i];
+            estimatedScales.Add(planetsEstimated[i].localScale);
             planetsEstimated[i].rotation = Quaternion.Euler(0,0,0);
             float error = (planetsEstimated[i].localScale.x - planetsActual[i]) / planetsActual[i] * 100f;
+            errors.Add(error);
             var txt = Instantiate(textField, textLoc[i], false);
             if (error>0)
             {
@@ -41,4 +45,15 @@ public class CompareScale : MonoBehaviour
             
         }
     }
+
+    public List<Vector3> GetScales()
+    {
+        return estimatedScales;
+    }
+
+    public List<float> GetErrors()
+    {
+        return errors;
+    }
+    
 }
