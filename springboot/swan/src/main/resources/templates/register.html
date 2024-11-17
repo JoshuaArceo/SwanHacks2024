@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
-  <link rel="stylesheet" href="/css/login.css" />
+  <link rel="stylesheet" href="/css/register.css" />
   <title>Sign Up - CodeJava</title>
   <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -10,11 +10,11 @@
 <body>
 <div class="container">
   <div>
-    <h1>Sign Up</h1>
+    <h1>Create an Account</h1>
   </div>
   <form th:action="@{/registerNew}"
-        method="post">
-    <div class="m-3">
+        method="post" style="max-width: 600px; margin: 0 auto;">
+    <div class="form-container">
       <div class="form-group-row">
         <label class="col-4 col-form-label">Username: </label>
         <div class="col-8">
@@ -47,7 +47,12 @@
         <span th:text="${param.error}"></span>
       </div>
       <div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <div class="swap">
+        <a href="login">
+          Have an account?
+        </a>
       </div>
     </div>
   </form>

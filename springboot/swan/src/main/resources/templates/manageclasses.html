@@ -3,7 +3,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Classroom Management</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/manageclasses.css" />
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script>
@@ -15,11 +15,12 @@
     </script>
 </head>
 <body>
-<div class="container text-center">
+<div class="container">
+<div class="text-center">
     <h1>Classroom Management</h1>
 </div>
 
-<div>
+<div class="select-and-list">
     <!-- Dropdown to select classroom -->
     <select onchange="showStudents(this.value)">
         <option value="" selected disabled>Select Classroom</option>
@@ -56,6 +57,7 @@
 </div>
 
 <!-- Form to add user -->
+<div class="add-user">
 <form th:action="@{/addUser}" method="post">
     <input type="text" name="userToAdd" placeholder="Enter username to add" />
     <input type="hidden" name="username" th:value="${param.username}" />
@@ -64,13 +66,18 @@
     </select>
     <button type="submit" class="btn btn-success">Add User</button>
 </form>
+</div>
 
-<!-- Buttons to create/delete classrooms -->
+<!-- Button/form create classrooms -->
+<div class="create-class">
 <form th:action="@{/createClass}" method="post">
     <input type="text" name="classname" placeholder="New Classroom Name" th:value="${param.classname}" />
     <input type="hidden" name="username" th:value="${param.username}" />
     <button type="submit" class="btn btn-primary">Create Classroom</button>
 </form>
+</div>
+<!-- Button/form delete classrooms -->
+<div class="delete-class">
 <form th:action="@{/deleteClassroom}" method="post">
     <input type="hidden" name="username" th:value="${param.username}" />
     <select name="classId">
@@ -79,5 +86,8 @@
     </select>
     <button type="submit" class="btn btn-danger">Delete Classroom</button>
 </form>
+</div>
+
+</div>
 </body>
 </html>
