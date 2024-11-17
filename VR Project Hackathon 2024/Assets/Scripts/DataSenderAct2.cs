@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -5,19 +6,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
 using File = System.IO.File;
 
 public class DataSenderAct2 : MonoBehaviour
 {
-    private string url = "http://localhost:5000/generate";
+    private string url = "http://192.168.137.1:8080/Unity/Data1";
     public CompareDistance comds;
     public TextMeshProUGUI id;
     private string[] planetNames = new[] { "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" };
     // Start is called before the first frame update
     void Start()
     {
-        Directory.CreateDirectory("Assets/Data");
+        //Directory.CreateDirectory("Assets/Data");
     }
     public void SendDataToDatabase()
     {
@@ -26,12 +26,17 @@ public class DataSenderAct2 : MonoBehaviour
     public IEnumerator DataSend()
     {
         SendData data = new SendData();
-        data.userID = id.text;
-        data.activityType = "Distance";
+        data.username = id.text;
+        data.grade = "B";
+        data.activityType = "DISTANCE";
         data.planetValues = new List<PlanetData>();
         for (int i = 0; i < planetNames.Length; i++)
         {
-            data.planetValues.Add(new PlanetData(planetNames[i], comds.GetEstimatePositions()[i], comds.GetErrors()[i])); 
+            var xx = comds.GetEstimatePositions()[i].x.ToString();
+            var yy = comds.GetEstimatePositions()[i].y.ToString();
+            var zz = comds.GetEstimatePositions()[i].z.ToString();
+            var q = xx + ", " + yy + ", " + zz;
+            data.planetValues.Add(new PlanetData(planetNames[i], q, comds.GetErrors()[i])); 
         }
         string json = JsonUtility.ToJson(data, true);
         //File.WriteAllText(Application.dataPath + $"/Data/{data.userID}.json", json);

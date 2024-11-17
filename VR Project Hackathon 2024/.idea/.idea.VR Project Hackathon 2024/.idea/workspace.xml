@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="512aa323-5f37-4ea9-9d9a-2d375e9d3007" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Project Hackathon 2024/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Text.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Text.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Activity1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Activity2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Activity2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CompareDistance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CompareDistance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSenderAct2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlanetData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlanetData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneChange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SendData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SendData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlanetData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SendData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StaticData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
   </component>

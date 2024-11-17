@@ -6,7 +6,8 @@ using UnityEngine;
 [Serializable]
 public class SendData
 {
-    public string userID;
+    public string username;
+    public string grade;
     public string activityType;
     public List<PlanetData> planetValues;
 }

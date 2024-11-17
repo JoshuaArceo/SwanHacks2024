@@ -1,16 +1,18 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class PlanetData
 {
     public string planetName;
-    public Vector3 values;
-    public float error;
+    public string vector;
+    public float percentError;
 
-    public PlanetData(string planetName, Vector3 values, float error)
+    public PlanetData(string planetName, string vector, float percentError)
     {
         this.planetName = planetName;
-        this.values = values;
-        this.error = error;
+        this.vector = vector;
+        this.percentError = percentError;
     }
 }

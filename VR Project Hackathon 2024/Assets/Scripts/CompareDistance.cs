@@ -29,12 +29,12 @@ public class CompareDistance : MonoBehaviour
             txt.transform.localScale *= 5f;
             if (error>0)
             {
-                txt.GetComponentInChildren<TextMeshProUGUI>().SetText(error + "% too high");
+                txt.GetComponentInChildren<TextMeshProUGUI>().SetText(error + "% too close");
             //Debug.Log(error + "% too high");
             }
             else
             {
-                txt.GetComponentInChildren<TextMeshProUGUI>().SetText(-1*error + "% too low");
+                txt.GetComponentInChildren<TextMeshProUGUI>().SetText(-1*error + "% too far");
             //Debug.Log(-1*error + "% too low");
             }
         }

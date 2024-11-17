@@ -17,6 +17,7 @@ public class SceneChange : MonoBehaviour
     {
         string id = manager.getID();
         StaticData.valueToKeep = id;
+        Debug.Log(id); //null
         SceneManager.LoadScene("Activity2");
     }
     
